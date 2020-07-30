@@ -1,0 +1,481 @@
+@import "style.css";
+/*========================NAVBAR=================================*/
+#nav{
+    width: 100%;
+    height: 5rem;
+    background-color: var(--color-violet);
+    /* position: relative; */
+    z-index: 100;
+}
+.nav-icon{
+    font-size: 3rem;
+    color: white;
+    float: right;
+    margin: 10px 20px 0 0;
+    cursor: pointer;
+    display: none;
+}
+
+/* MAIN PAGE */
+.chat-container{
+    display: flex;
+}
+/*==========================================================*/
+/*=========================LEFT PANEL======================*/
+.sidebar{
+    width: 20%;
+    height: 100vh;
+    background-color: var(--color-grey-light);
+    box-shadow: var(--box-shadow-sm);
+    position: relative;
+}
+.sidebar::before{
+    position: absolute;
+    content: "Profile";
+    width: 100%;
+    top: -66px;
+    height: 66px;
+    background-image: linear-gradient(90deg, var(--color-dahlia), var(--color-violet));    
+    line-height: 80px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: var(--space-sm);
+    color: var(--color-grey-light);
+}
+.sidebar-items{
+    margin: 3rem 0;
+    padding: 0;
+}
+.sidebar-items li{
+    list-style: none;
+    
+}
+.sidebar-items li a{
+    text-decoration: none;
+    display: block;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 1.5rem;   
+    letter-spacing: var(--space-sm); 
+    
+}
+
+.sidebar-items li:not(:first-child):hover{
+    background-image: linear-gradient(90deg, var(--color-dahlia), var(--color-violet));    
+    border-radius: 50px;
+}
+.sidebar-items li:hover a{
+    color: var(--color-grey-light);
+    
+}
+
+
+/* ================Profile img hover animation================= */
+.sidebar-items__img{
+    display: block;
+    width: 8rem;
+    height: 8rem;  
+    border-radius: 50%; 
+    margin: auto; 
+    overflow: hidden;
+}
+.profile-img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all .4s ease;
+}
+
+.sidebar-items__img:hover .profile-img{
+    transform: scale(1.5);
+}
+
+/*=============================================================*/
+/*========================RIGHT PANEL==========================*/
+.chat-right{
+    width: 80%;
+    height: 90vh;
+    transition: all .5s;
+    /* background-color: var(--color-dahlia); */
+}
+.chat-right__msg{
+    width: 100%;
+    height: 75vh;
+    padding: 5rem 2rem 0 2rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*=======================RIGHT PANEL=======================*/
+/*===================LEFT MESSAGE CARD====================*/
+.common-margin{
+    margin-top: 2rem;
+}
+.left-message{
+    display: flex;
+    width: 50%;
+}
+.sender-img-block{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: relative;
+}
+.online-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: aquamarine;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid var(--color-grey-light);
+}
+.offline-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: tomato;
+    border-radius: 50%;
+    display: block;
+}
+.sender-img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.left-msg-area{
+    margin-left: 2rem;
+}
+
+.sender-name{
+    font-size: 1.3rem;    
+}
+.date{
+    margin-left: 2rem;
+}
+
+.left-msg{
+    padding: 1rem;
+    width: auto;    
+    background-color: rgba(230, 154,141, .2);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: .5rem;
+    position: relative;
+}
+.left-msg::before{
+    position: absolute;
+    content: "";
+    top:0;
+    left: -.7rem;
+    width: 0;
+    height :0;
+    border-top:  .7rem solid rgba(230, 154,141, .2);
+    border-left: .7rem solid transparent;
+}
+.left-msg p, .right-msg p{
+    font-size: 1.3rem;    
+}
+
+.left-msg__file{
+    padding: 1rem;
+    width: auto;    
+    background-color: transparent;
+    position: relative;
+}
+.sent_msg-icon{
+    color: #85f2d4;
+    font-size: 2rem;
+    margin-right: -2rem;
+}
+/*=========================================================*/
+/*===================RIGHT MESSAGE CARD====================*/
+
+.right-message{
+    display: flex;
+    justify-content: flex-end;
+}
+.right-msg-area{
+    max-width: 50%;    
+    width: auto;
+}
+.right{
+    display: block;
+    text-align: right;
+}
+/*=====FOR TEXT MESSAGE========*/
+.right-msg{
+    padding: 1rem;
+    width: auto;    
+    background-color: rgba(202, 201, 201, 0.2);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: .5rem;
+    position: relative;
+}
+/*========FOR IMG && FILES MESSAGE=========*/
+.right-msg__files{
+    padding: 1rem;
+    width: auto;        
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: .5rem;
+    position: relative;
+}
+.right-msg__files a, .left-msg__file a{
+
+    text-decoration: none;
+    color: black; 
+}
+.right-msg__files i, .left-msg__file i{    
+    color: var(--color-violet);
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+.pdf::before{    
+    color: tomato;    
+}
+.ms-word::before{
+    color: blue;
+}
+.img_file{
+    margin-top: .5rem;
+    border-radius: 10px;
+    width: 150px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.animated-emoji{
+    width: auto;
+    height: auto;
+    animation: anim-emoji 2s infinite;
+}
+
+@keyframes anim-emoji{
+    50%{
+        transform: rotate(35deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(-35deg);
+    }
+}
+
+/*===========================================*/
+.chat-right__form{
+    width: 100%;
+    height: 10vh;
+    border-top: 2px solid var(--color-grey-dark);    
+}
+
+/*=====================CUSTOM SCROLL BAR==================*/
+.chat-right__msg::-webkit-scrollbar{
+    width: 1rem;
+    background-color: var(--color-grey-dark);
+}
+
+.chat-right__msg::-webkit-scrollbar-thumb{        
+    border-radius: 1rem;
+}
+
+/*=======================================*/
+.chat-form__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--color-grey-dark); 
+    padding: 1rem 0;  
+}
+.form-input__one{
+    width: 70%; 
+}
+
+.textarea {
+    width: 100%;
+    border: 0;
+    padding: 1rem 2rem;
+    height: 5rem;
+    resize: none;
+    background: transparent;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.upload-file{
+    display: none;
+}
+
+.upload-label{
+    width: 100%;
+    height: 5rem;    
+    line-height: 5.5rem;
+    text-align: center;
+    display: block;
+}
+.icon{
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: var(--color-violet);
+    cursor: pointer;
+}
+.emoji{
+    /* height: 5vh; */
+    width: 100%;
+    text-align: center;
+}
+.emoji-icon{
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+/*=========================PASSWORD RESET=================================*/
+.right-area{
+    width: 100%;
+}
+.form-section{
+    padding: 3rem;    
+}
+.form-grid{
+    width: 50%;
+    max-width: 400px;
+    margin: auto;
+    padding: 5rem 0;
+}
+/*============================MODAL POPUP================================*/
+.popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 10rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 1rem var(--color-grey-dark);
+    background: var(--color-grey-light);
+    z-index: 100;
+}
+.popup__heading.success{
+    color: #85f2d4; 
+}
+.popup__heading.error{
+    color: red; 
+}
+.popup__heading h3 {
+    font-size: 1.7rem;   
+    font-weight: 500;
+}
+.popup__heading span, .error-icon{
+    display: inline-block;     
+    width: 3rem;
+    height: 3rem;
+    line-height: 2.8rem;
+    text-align: center; 
+    margin-right: 1rem;    
+    border-radius: 50%;
+    border: 2px solid;
+}
+.popup__heading .error span{
+    color: red; 
+    border: 2px solid red;
+}
+.popup__heading .success span{
+    color: var(--color-violet); 
+    border: 2px solid var(--color-violet);
+    
+}
+
+.popup__body p {
+    margin: 1rem 0 0 4rem;  
+    font-size: 1.3rem; 
+    letter-spacing: var(--space-sm);
+    font-weight: 500;
+}
+.popup__body .success{
+    color: #85f2d4; 
+}
+.popup__body .error {
+    color: red; 
+}
+.close-btn{
+    position: absolute;
+    top: 0rem;
+    right: .5rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-grey-dark);
+    cursor: pointer;
+}
+/*===============================MESSAGE INPUT ERROR BOX================================*/
+.upload-file__error{
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    /* text-align: center; */
+    background: red;
+    padding: 0 2rem;
+    color: white;
+    bottom: 19vh;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: var(--space-sm);
+    transition: all .5s ease;
+    opacity: 0;
+}
+.show-error{
+    opacity: 1;
+    width: 100%;
+}
+
+
+/*============================MEDIA QUERIES=================================*/
+@media screen and (max-width: 768px){
+    .nav-icon{
+        display: block;
+    }
+    .chat-container{
+        flex-wrap: wrap;
+    }    
+    .sidebar{
+        display: none;
+        width: 100%;        
+        /* height: 100vh; */
+    }
+    .sidebar::before{
+        display: none;
+        width: 30%;
+    }
+    .chat-right{
+        width: 100%;
+        /* height: 100vh; */
+    }
+    .chat-right__msg{
+        padding: 5rem 1rem;
+    }
+    .left-message{        
+        width: 80%;        
+    }
+    .right-msg-area{
+        max-width: 80%;    
+        width: auto;
+    }
+    /* .form-input__two{
+        padding: 0 .5rem;
+        
+    } */
+}
